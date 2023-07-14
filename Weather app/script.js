@@ -7,10 +7,7 @@ const options = {
 	}
 };
 
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
+fetch(url, options)
+.then(Response => Response.json())
+.then(Response => console.log(Response))
+.then(err => console.log(err))
