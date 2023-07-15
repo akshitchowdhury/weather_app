@@ -33,7 +33,9 @@ fetch("https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city="+city, opti
 	
 	document.getElementsByTagName('h1')[3].innerText = Response.wind_speed+" km/hr"
 
-	
+	// var Shanghai = "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Shanghai"
+
+	climate_stock("Shanghai")
 
 	feels_like.innerText = Response.feels_like;
     humidity.innerText = Response.humidity;
@@ -59,3 +61,49 @@ submit.addEventListener('click', (e)=>{
 })
 
 getWeather('Delhi')
+
+
+var climate_stock = function(city){
+
+	fetch("https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city="+city, options)
+  .then((Response) => Response.json())
+  .then((Response) => {
+    console.log(Response);
+
+
+	var cities = ['Shanghai', 'Boston', 'Lucknow','Tokyo']
+
+	
+	
+	var stock = [
+		Response.feels_like,
+		Response.humidity,
+		Response.max_temp,
+		Response.min_temp,
+		Response.sunrise,
+		Response.sunset,
+	    Response.temp,
+		Response.wind_degrees,
+		Response.wind_speed,]
+	
+	for(var i =0; i<cities.length; i++){
+
+		for(var j =0; j<document.getElementsByClassName(cities[i]).length; j++){
+
+		
+
+		document.getElementsByClassName(cities[i])[j].innerText = stock[j]
+
+		}
+	}
+
+
+
+
+
+	  }) 
+
+	
+
+}
+
