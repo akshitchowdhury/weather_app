@@ -26,12 +26,12 @@ fetch("https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city="+city, opti
 
 	// cloud_pct.innerText = Response.cloud_pct;
 
-	document.getElementsByTagName('h1')[1].innerText = Response.temp+"°C"
+	document.getElementsByTagName('h1')[1].innerText = Response.temp+" °C"
 
 	
-	document.getElementsByTagName('h1')[2].innerText = Response.humidity+"g/kg"
+	document.getElementsByTagName('h1')[2].innerText = Response.humidity+" %"
 	
-	document.getElementsByTagName('h1')[3].innerText = Response.wind_speed+"m/s"
+	document.getElementsByTagName('h1')[3].innerText = Response.wind_speed+" km/hr"
 
 	
 
