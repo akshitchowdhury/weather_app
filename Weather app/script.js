@@ -1,5 +1,5 @@
 const url =
-  "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Seattle";
+  "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city="+ city;
 const options = {
   method: "GET",
   headers: {
