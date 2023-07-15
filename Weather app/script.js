@@ -21,8 +21,21 @@ fetch("https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city="+city, opti
 
 	// var rumble = document.querySelector('.cardbody')
 
-    // cloud_pct.innerText = Response.cloud_pct;
-    feels_like.innerText = Response.feels_like;
+
+
+
+	// cloud_pct.innerText = Response.cloud_pct;
+
+	document.getElementsByTagName('h1')[1].innerText = Response.temp+"°C"
+
+	
+	document.getElementsByTagName('h1')[2].innerText = Response.humidity+"g/kg"
+	
+	document.getElementsByTagName('h1')[3].innerText = Response.wind_speed+"m/s"
+
+	
+
+	feels_like.innerText = Response.feels_like;
     humidity.innerText = Response.humidity;
     max_temp.innerText = Response.max_temp;
     min_temp.innerText = Response.min_temp;
@@ -42,6 +55,7 @@ submit.addEventListener('click', (e)=>{
 	
 	getWeather(city.value)
 	
+
 })
 
 getWeather('Delhi')
