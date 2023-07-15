@@ -8,20 +8,40 @@ const options = {
   },
 };
 
+const getWeather = (city)=>{
+
+
+
+cityName.innerText = city
+
 fetch(url, options)
   .then((Response) => Response.json())
   .then((Response) => {
     console.log(Response);
 
-    cloud_pct.innerHtml = response.cloud_pct;
-    feels_like.innerHtml = response.feels_like;
-    humidity.innerHtml = response.humidity;
-    max_temp.innerHtml = response.max_temp;
-    min_temp.innerHtml = response.min_temp;
-    sunrise.innerHtml = response.sunrise;
-    sunset.innerHtml = response.sunset;
-    temp.innerHtml = response.temp;
-    wind_degrees.innerHtml = response.wind_degrees;
-    wind_speed.innerHtml = response.wind_speed;
+	// var rumble = document.querySelector('.cardbody')
+
+    cloud_pct.innerText = Response.cloud_pct;
+    feels_like.innerText = Response.feels_like;
+    humidity.innerText = Response.humidity;
+    max_temp.innerText = Response.max_temp;
+    min_temp.innerText = Response.min_temp;
+    sunrise.innerText = Response.sunrise;
+    sunset.innerText = Response.sunset;
+    temp.innerText = Response.temp;
+    wind_degrees.innerText = Response.wind_degrees;
+    wind_speed.innerText = Response.wind_speed;
   })
   .then((err) => console.log(err));
+
+}
+
+submit.addEventListener('click', (e)=>{
+
+	e.preventDefault()
+	
+	getWeather(city.value)
+	
+})
+
+getWeather('Delhi')
