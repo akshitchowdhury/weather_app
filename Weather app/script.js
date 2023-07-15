@@ -1,6 +1,6 @@
-const url =
-  "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city="+ city;
-const options = {
+var url =
+  "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city="+city;
+var options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": "a0e8ad559amsh8a9f120b2c4be0ap19d874jsn506081e1f34d",
@@ -8,20 +8,20 @@ const options = {
   },
 };
 
-const getWeather = (city)=>{
+var getWeather = (city)=>{
 
 
 
 cityName.innerText = city
 
-fetch(url, options)
+fetch("https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city="+city, options)
   .then((Response) => Response.json())
   .then((Response) => {
     console.log(Response);
 
 	// var rumble = document.querySelector('.cardbody')
 
-    cloud_pct.innerText = Response.cloud_pct;
+    // cloud_pct.innerText = Response.cloud_pct;
     feels_like.innerText = Response.feels_like;
     humidity.innerText = Response.humidity;
     max_temp.innerText = Response.max_temp;
